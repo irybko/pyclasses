@@ -7,9 +7,9 @@
 from http.server import HTTPServer, CGIHTTPRequestHandler, SimpleHTTPRequestHandler
 import smtpd
 import os
-from corsettings import CORSSettings
+from corssettings import CORSSettings
 from extstring import ExtString
-from logmsg import Logs
+from logmsg import Logmsg
 #
 cors = CORSSettings()
 #
@@ -152,7 +152,10 @@ def postmessage(**kwargs):
         response["headers"].append(stepcors0,stepcors1)
         for item in cors.getheaders():
             response["headers"].append((item[0],item[1]))
-        response["data"].append(msg.format_map({ "textmsg": "request was not accepted for processing, because message is epcent, length = {msglen}".format_map({"msglen": datasz}) }))
+        response["data"].append(msg.format_map({ 
+            "textmsg": "request was not accepted for processing, \
+                        because message is epcent, length = {msglen}".format_map({"msglen": datasz}) 
+        }))
     response = bytes(repr(response),"utf-8")
     return response
 
