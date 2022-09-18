@@ -4,7 +4,7 @@
 # Developed by Ivan Rybko
 #############################################
 
-from singeton  import Singleton
+from singleton  import Singleton
 from logmsg    import Logmsg
 from extstring import ExtString
 from extdict   import ExtDict
