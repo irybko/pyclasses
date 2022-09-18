@@ -5,7 +5,7 @@
 ###########################################
 
 import email
-import smtplib, smtpclient
+import smtplib
 import base64
 import imaplib
 
